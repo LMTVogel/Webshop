@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $fillable = [
-        'title', 'image',
+        'name', 'image',
     ];
+
+    public function showProducts()
+    {
+        return $this->hasMany('App\Product', 'cat_id');
+    }
 }
