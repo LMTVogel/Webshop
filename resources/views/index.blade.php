@@ -11,7 +11,7 @@
                     <img src="{{$category->image}}" class="card-img-top cardImg" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$category->name}}</h5>
-                        <a href="/products/{{$category->id}}" class="btn btn-primary">Bekijk de producten</a>
+                        <a href="/products-overview/{{$category->id}}" class="btn btn-primary">Bekijk de producten</a>
                     </div>      
                 </div>
             </div>

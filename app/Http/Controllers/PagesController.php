@@ -26,4 +26,10 @@ class PagesController extends Controller
         $products = Category::find($id)->showProducts;
         return view('products')->with('products', $products);
     }
+
+    public function productOverview($id)
+    {
+        $product = Product::find($id);
+        return view('product-details')->with('product', $product);
+    }
 }

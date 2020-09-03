@@ -10,9 +10,10 @@
                 <div class="card catCard" style="width: 18rem;">
                     <img src="{{$product->image}}" class="card-img-top cardImg" alt="...">
                     <div class="card-body row">
-                        <h5 class="card-title col-6">{{$product->title}}</h5>
+                        <h5 class="card-title col-6">{{$product->name}}</h5>
                         <small class="col-6">&euro; {{$product->price}}</small>
-                        <a href="/products/{{$product->id}}" class="btn btn-primary col-12">Bekijk het product</a>
+                        <a href="/product-details/{{$product->id}}" class="btn btn-primary col-12">Bekijk het product</a>
+                        <a href="/product-details/{{$product->id}}" class="btn btn-success col-12 cartButton">Toevoegen aan winkelmandje</a>
                     </div>      
                 </div>
             </div>
