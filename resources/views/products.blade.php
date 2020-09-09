@@ -2,7 +2,6 @@
 
 @section('content')
     <h1>Producten</h1>
-    {{-- @if (count($products) > 1) --}}
     <div class="container">
         <div class="row">
         @foreach ($products as $product)
@@ -12,13 +11,12 @@
                     <div class="card-body row">
                         <h5 class="card-title col-6">{{$product->name}}</h5>
                         <small class="col-6">&euro; {{$product->price}}</small>
-                        <a href="/product-details/{{$product->id}}" class="btn btn-primary col-12">Bekijk het product</a>
-                        <a href="/product-details/{{$product->id}}" class="btn btn-success col-12 cartButton">Toevoegen aan winkelmandje</a>
+                        <a href="{{ route('product-details', $product->id)}}" class="btn btn-primary col-12">Bekijk het product</a>
+                        <a href="{{ route('add-to-cart', $product->id) }}" class="btn btn-success col-12 cartButton">Toevoegen aan winkelmandje</a>
                     </div>      
                 </div>
             </div>
         @endforeach
         </div>
     </div>
-    {{-- @endif --}}
 @endsection

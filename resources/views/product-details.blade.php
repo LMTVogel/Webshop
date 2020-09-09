@@ -14,7 +14,7 @@
                     <label for="qtyProduct">Aantal producten:</label>
                     <input type="number">
                 </form>
-                <a href="/product-details/{{$product->id}}" class="btn btn-success col-12 cartButton">Toevoegen aan winkelmandje</a>
+                <a href="{{ route('add-to-cart', $product->id) }}" class="btn btn-success col-12 cartButton">Toevoegen aan winkelmandje</a>
             </div>
         </div>
     </div>
