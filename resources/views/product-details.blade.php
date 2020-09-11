@@ -7,15 +7,23 @@
             <div class="col-8">
                 <img src="{{$product->image}}" alt="">
             </div>
-            <div class="col-4">
-                <p>{{$product->description}}</p>
-                <p>&euro; {{$product->price}}</p>
-                <form action="POST">
-                    <label for="qtyProduct">Aantal producten:</label>
-                    <input type="number">
-                </form>
-                <a href="{{ route('add-to-cart', $product->id) }}" class="btn btn-success col-12 cartButton">Toevoegen aan winkelmandje</a>
-            </div>
+            @guest
+                <div class="col-4">
+                    <p>{{$product->description}}</p>
+                    <p>&euro; {{$product->price}}</p>
+                    <p>Een product bestellen? Zorg er eerst voor dat u <a href="{{ route('login') }}">hier inlogd</a> of <a href="{{ route('register') }}">registreerd</a>.</p>  
+                </div>    
+            @else 
+                <div class="col-4">
+                    <p>{{$product->description}}</p>
+                    <p>&euro; {{$product->price}}</p>
+                    <form action="POST">
+                        <label for="qtyProduct">Aantal producten:</label>
+                        <input type="number">
+                    </form>
+                    <a href="{{ route('cart.addToCart', $product->id) }}" class="btn btn-success col-12 cartButton">Toevoegen aan winkelmandje</a>
+                </div>
+            @endguest
         </div>
     </div>
 @endsection
