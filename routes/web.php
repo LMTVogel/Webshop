@@ -24,4 +24,4 @@ Route::get('product-details/{id}', 'PagesController@productOverview')->name('pro
 
 //Route::get('/add-to-cart/{product}', 'CartController@add')->name('add-to-cart');
 
-Route::get('/add-to-cart/{product}', 'CartController@addToCart')->name('cart.addToCart');
+Route::get('/add-to-cart/{id}', 'CartController@addToCart')->name('cart.addToCart');
