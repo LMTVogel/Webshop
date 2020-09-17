@@ -22,6 +22,4 @@ Route::get('/products-overview/{id}', 'PagesController@getProducts')->name('prod
 
 Route::get('product-details/{id}', 'PagesController@productOverview')->name('product.details');
 
-//Route::get('/add-to-cart/{product}', 'CartController@add')->name('add-to-cart');
-
 Route::get('/add-to-cart/{id}', 'CartController@addToCart')->name('cart.addToCart');
