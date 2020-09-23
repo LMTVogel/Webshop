@@ -20,4 +20,15 @@ class CartController extends Controller
 
         return redirect()->back()->with('message', 'Product is toegevoegd aan uw winkelmand!');
     }
+
+    public function getCart() 
+    {
+        if (!Session::has('cart')) {
+            return view('shoppingcart');
+        }
+
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        return view('shoppingcart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+    }
 }

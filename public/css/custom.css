@@ -13,3 +13,7 @@
 .cartButton {
     margin-top: 10px;
 }
+
+.qty {
+    color: red;
+}
