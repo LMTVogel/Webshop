@@ -17,3 +17,19 @@
 .qty {
     color: red;
 }
+
+.cartBtnGroup {
+    float: right;
+}
+
+.qtyBtn {
+    margin-right: 20px;
+}
+
+.iconColor {
+    color: white;
+}
+
+.list-group-item {
+    width: 66vw;
+}
