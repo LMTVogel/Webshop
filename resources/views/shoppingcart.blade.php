@@ -32,9 +32,10 @@
             </div>
         </div>
         <div class="row">
-            <a type="button" class="btn btn-primary">Bestel</a>
+            <a href="{{ route('cart.checkout') }}" type="button" class="btn btn-primary">Bestel</a>
         </div>
     @else 
         <p>Er zit nog niks in je winkelmandje!</p>
+        <a href="{{ route('index') }}" type="button" class="btn btn-primary">Verder winkelen</a>
     @endif
 @endsection

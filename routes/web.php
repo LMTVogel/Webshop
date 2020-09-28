@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PagesController@index');
+Route::get('/', 'PagesController@index')->name('index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -29,3 +29,5 @@ Route::get('/shoppingcart', 'CartController@getCart')->name('cart.shoppingcart')
 Route::get('/remove-item/{id}', 'CartController@removeItem')->name('cart.removeItem');
 
 Route::get('/remove-all-items/{id}', 'CartController@removeAllItems')->name('cart.removeAllItems');
+
+Route::get('/checkout', 'CartController@checkout')->name('cart.checkout');

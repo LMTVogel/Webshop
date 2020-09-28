@@ -40,6 +40,34 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="postalCode" class="col-md-4 col-form-label text-md-right">{{ __('Postal Code') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="postalCode" type="text" class="form-control @error('postalCode') is-invalid @enderror" name="postalCode" value="{{ old('postalCode') }}" required autocomplete="postalCode">
+
+                                @error('postalCode')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="adress" class="col-md-4 col-form-label text-md-right">{{ __('Adress') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="adress" type="text" class="form-control @error('adress') is-invalid @enderror" name="adress" value="{{ old('adress') }}" required autocomplete="adress">
+
+                                @error('adress')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
