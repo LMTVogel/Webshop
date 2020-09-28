@@ -27,3 +27,5 @@ Route::get('/add-to-cart/{id}', 'CartController@addToCart')->name('cart.addToCar
 Route::get('/shoppingcart', 'CartController@getCart')->name('cart.shoppingcart');
 
 Route::get('/remove-item/{id}', 'CartController@removeItem')->name('cart.removeItem');
+
+Route::get('/remove-all-items/{id}', 'CartController@removeAllItems')->name('cart.removeAllItems');

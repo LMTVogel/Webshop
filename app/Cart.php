@@ -73,6 +73,11 @@ class Cart
 
     public function removeAllItems($id)
     {
-        
+        $this->totalQty -= $this->items[$id]['qty'];
+        $this->totalPrice -= $this->items[$id]['price'];
+
+        unset($this->items[$id]);
+
+        Session::put('cart', $this);
     }
 }

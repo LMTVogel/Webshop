@@ -39,4 +39,13 @@ class CartController extends Controller
 
         return redirect()->back();
     }
+
+    public function removeAllItems($id)
+    {
+        $cart = new Cart();
+
+        $cart->removeAllItems($id);
+
+        return redirect()->back();
+    }
 }
