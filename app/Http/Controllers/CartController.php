@@ -9,7 +9,17 @@ use Session;
 
 class CartController extends Controller
 {
-    
+    public function getCart() 
+    {
+        if (!Session::has('cart')) {
+            return view('shoppingcart');
+        }
+
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        return view('shoppingcart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice, 'totalQty' => $cart->totalQty]);
+    }
+
     public function addToCart($id)
     {
         $product = Product::find($id);
@@ -21,14 +31,12 @@ class CartController extends Controller
         return redirect()->back()->with('message', 'Product is toegevoegd aan uw winkelmand!');
     }
 
-    public function getCart() 
+    public function removeItem($id)
     {
-        if (!Session::has('cart')) {
-            return view('shoppingcart');
-        }
+        $cart = new Cart();
 
-        $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
-        return view('shoppingcart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+        $cart->removeItem($id);
+
+        return redirect()->back();
     }
 }

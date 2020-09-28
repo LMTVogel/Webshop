@@ -56,4 +56,23 @@ class Cart
         // Data wordt opgeslagen in de session onder de naam cart.
         Session::put('cart', $this);    
     }
+
+    public function removeItem($id)
+    {
+        $this->items[$id]['qty']--;
+        $this->items[$id]['price'] -= $this->items[$id]['item']['price'];
+        $this->totalQty--;
+        $this->totalPrice -= $this->items[$id]['item']['price'];
+
+        if($this->items[$id]['qty'] <= 0){
+            unset($this->items[$id]);
+        }
+
+        Session::put('cart', $this);
+    }
+
+    public function removeAllItems($id)
+    {
+        
+    }
 }
