@@ -48,4 +48,13 @@ class CartController extends Controller
 
         return redirect()->back();
     }
+
+    public function removeCart()
+    {
+        $cart = new Cart();
+
+        $cart->removeCart();
+
+        return redirect('/');
+    }
 }

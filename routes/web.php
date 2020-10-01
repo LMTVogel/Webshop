@@ -30,4 +30,6 @@ Route::get('/remove-item/{id}', 'CartController@removeItem')->name('cart.removeI
 
 Route::get('/remove-all-items/{id}', 'CartController@removeAllItems')->name('cart.removeAllItems');
 
-Route::get('/checkout', 'CartController@checkout')->name('cart.checkout');
+Route::post('/order', 'OrderController@order')->name('cart.order');
+
+Route::get('/removeCart', 'CartController@removeCart')->name('cart.removeCart');

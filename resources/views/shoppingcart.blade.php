@@ -32,7 +32,12 @@
             </div>
         </div>
         <div class="row">
-            <a href="{{ route('cart.checkout') }}" type="button" class="btn btn-primary">Bestel</a>
+            <form method="POST" action="/order">
+                @csrf
+                <input type="hidden" name='user_id' value='{{Auth::user()->id}}'>
+                <input type="hidden" name='order_total' value='{{ $totalPrice }}'>
+                <button type='submit' class="btn btn-lg btn-block btn-success">Bestel</button>
+            </form>
         </div>
     @else 
         <p>Er zit nog niks in je winkelmandje!</p>

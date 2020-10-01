@@ -80,4 +80,9 @@ class Cart
 
         Session::put('cart', $this);
     }
+
+    public function removeCart()
+    {
+        Session::forget('cart');
+    }
 }
