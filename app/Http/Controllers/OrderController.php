@@ -18,5 +18,7 @@ class OrderController extends Controller
     public function orderShow()
     {
         $getOrder = Order::get()->where('user_id', Auth::user()->id);
+
+        return view('running-orders', ['getOrder' => $getOrder]);
     }
 }
