@@ -10,7 +10,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($getOrder as $order)           
+            @foreach ($getOrders as $order)           
                 <tr>
                     <th scope="row">{{ $order->id }}</th>
                     <td>{{ $order->order_total }},-</td>

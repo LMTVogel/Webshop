@@ -2,7 +2,6 @@
 
 @section('content')
     <h1>Categoriën</h1>
-    @if (count($categories) > 1)
     <div class="container">
         <div class="row">
         @foreach ($categories as $category)
@@ -18,5 +17,4 @@
         @endforeach
         </div>
     </div>
-    @endif
 @endsection
